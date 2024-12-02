@@ -35,7 +35,7 @@ class Member(Person):
             return sum(self.scores)/len(self.scores)
 
     def get_member_summary(self):
-        return f"{self.get_details()}, Membership ID: {self.id}, Sport: {self.sport}, Average Performance Scores: {self.calculate_average_score}"
+        return f"{self.get_details()}, Membership ID: {self.id}, Sport: {self.sport}, Average Performance Scores: {self.calculate_average_score()}"
 
 class Coach(Person):
     def __init__(self, name, age, contact_number, coach_id, specialisation, salary):
@@ -108,7 +108,7 @@ staff = Staff("Callum", 48, "5374346", "S4235", "Club Secretary", 10)
 coach1.assign_mentee(member1)
 for i in range(1,5):
     member1.add_performance_score(randint(1,10))
-print(member1.calculate_average_score)
+print(member1.calculate_average_score())
 staff.assist_member(coach2)
 coach1.increase_salary(15)
 staff.increment_years_of_service()
